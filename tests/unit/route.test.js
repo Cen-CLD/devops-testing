@@ -50,5 +50,14 @@ describe('Rutas de la API', () => {
 
       expect(response.status).toBe(400);
     });
+
+    it('debe devolver error si la operación no es válida', async () => {
+      const response = await request(app)
+        .post('/calculate')
+        .send({ operation: 'potencia', a: 2, b: 3 });
+
+      expect(response.status).toBe(400);
+      expect(response.body.error).toContain('Operación no válida');
+    });
   });
 });
