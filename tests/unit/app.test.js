@@ -15,11 +15,11 @@ describe('Aplicación Express', () => {
   });
 
   it('debe manejar errores internos del servidor', async () => {
-    const app = require('../../src/app');
+    // Simulamos una ruta que lanza un error
     app.get('/error', (req, res, next) => {
       next(new Error('Error simulado'));
     });
-  
+
     const response = await request(app).get('/error');
     expect(response.status).toBe(500);
     expect(response.body.error).toBe('Error interno del servidor');
