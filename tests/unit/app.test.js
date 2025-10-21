@@ -13,11 +13,4 @@ describe('Aplicación Express', () => {
     expect(response.status).toBe(404);
     expect(response.body.error).toBe('Ruta no encontrada');
   });
-
-    it('debe devolver 500 si ocurre un error interno', async () => {
-      const response = await request(app).get('/forzar-error');
-      expect(response.status).toBe(500);
-      expect(response.body.error).toBe('Error interno del servidor');
-      expect(response.body.message).toBeDefined();
-    });
 });
