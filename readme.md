@@ -1,4 +1,4 @@
-# Curso de GitHub Actions - Aplicación de Práctica
+# Curso de GitHub Actions - Aplicación de Práctica 
 
 Esta es una aplicación Node.js/Express diseñada para aprender y practicar GitHub Actions.
 
